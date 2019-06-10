@@ -1,23 +1,21 @@
 <template>
-  <div id="app">
-    
-  <router-view/>
-  </div>
+    <div >      
+     <increment  />
+      <increment  />
+       <increment  />
+        <increment  />
+    </div>
 </template>
 
 <script>
+
 export default {
   name: 'app',
-  components:{
 
-  },
-  data(){
-    return {
-      
-    }
+  components:{
+      counter: () => import('./components/counter'),
+      increment: () => import('./components/increment')
   }
-  
-  
 }
 </script>
 
