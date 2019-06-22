@@ -7,9 +7,33 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      alias: '/home',
-      component: () => import('./components/home'),
+      component: () => import('./components/home')
+    },
+    {
+      path: '/users/:id',
+      component: () => import('./components/users'),
+    },
+    {
+      path: '/posts',
+      component: () => import('./components/posts')
+    },
+    {
+      path: '/posts/:id',
+      component: () => import('./components/post')
+    },
+    {
+      path: '/albums',
+      component: () => import('./components/albums')
+    },
+    {
+      path: '/albums/:id',
+      component: () => import('./components/photo')
+    },
+    {
+      path: '/todos',
+      component: () => import('./components/todos')
     }
+
   ]
 });
 

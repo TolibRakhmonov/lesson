@@ -34,34 +34,34 @@ export default new Vuex.Store({
     },
     actions: {
         getApi({}, url){
-            fetch('https://jsonplaceholder.typicode.com/' + url)
-            .then(res = res.json())
+           return fetch('https://jsonplaceholder.typicode.com/' + url)
+            .then(res => res.json())
             .then(data => data)
-            .then(error => alert(error))
+            .catch(error => alert(error))
         },
         async getUsers({dispatch, commit}){
             let data = await dispatch('getApi', 'users')
-            commit(data, setUsers)
+            commit('setUsers', data)
         },
         async getPosts({dispatch, commit}){
             let data = await dispatch('getApi', 'posts')
-            commit(data, setPosts)
+            commit('setPosts', data)
         },
         async getComments({dispatch, commit}){
             let data = await dispatch('getApi', 'comments')
-            commit(data, setComments)
+            commit('setComments', data)
         },
         async getTodos({dispatch, commit}){
             let data = await dispatch('getApi', 'todos')
-            commit(data, setTodos)
+            commit('setTodos', data)
         },
         async getAlbums({dispatch, commit}){
             let data = await dispatch('getApi', 'albums')
-            commit(data, setAlbums)
+            commit('setAlbums', data)
         },
         async getPhotos({dispatch, commit}){
             let data = await dispatch('getApi', 'photos')
-            commit(data, setPhotos)
+            commit('setPhotos', data)
         }
     }
 })
